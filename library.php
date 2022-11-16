@@ -2,6 +2,12 @@
 
 <div class="container">
     <div class="row border">
+        <?php if (isset($_SESSION['message'])) { ?>
+            <div class="alert alert-<?=$_SESSION['type']?> alert-dismissible fade show" role="alert">
+                <?=$_SESSION['message']?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php session_unset(); } ?>
         <div class="card col-4 p-3">
             <form action="CRUD/create.php" method="post">
                 <input type="text" class="form-control" name="Titulo" placeholder="Titulo del Libro" required >
@@ -12,12 +18,6 @@
                 <textarea class="form-control" name="descripcion" id="desc" cols="30" rows="10"></textarea>
                 <button type="submit" class="btn btn-primary mt-3"name="save" >Aceptar</button>
             </form>
-            <?php if (isset($_SESSION['message'])) { ?>
-                <div class="alert alert-<?=$_SESSION['type']?> alert-dismissible fade show" role="alert">
-                    <?=$_SESSION['message']?>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            <?php session_unset(); } ?>
         </div>
         <div class="col-8">
             <table class="table table-striped">
@@ -27,6 +27,7 @@
                 <th scope="col">Titulo</th>
                 <th scope="col">Autor</th>
                 <th scope="col">Año</th>
+                <th scope="col">Accion</th>
                 <!-- <th scope="col">Descripcion</th> -->
                 </tr>
             </thead>
@@ -42,6 +43,7 @@
                         <td><?php echo($row["title"]) ?></td>
                         <td><?php echo($row["author"]) ?></td>
                         <td><?php echo($row["_year"]) ?></td>
+                        <td> <a href="edit.php?id=<?php echo($row['id_lib'])?>">Edit</a> <a href="CRUD/delete.php?id=<?php echo($row['id_lib'])?>">Delete</a></td>
                     </tr>
                 <?php    
                 }
