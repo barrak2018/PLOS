@@ -43,7 +43,10 @@
                         <td><?php echo($row["title"]) ?></td>
                         <td><?php echo($row["author"]) ?></td>
                         <td><?php echo($row["_year"]) ?></td>
-                        <td> <a href="edit.php?id=<?php echo($row['id_lib'])?>">Edit</a> <a href="CRUD/delete.php?id=<?php echo($row['id_lib'])?>">Delete</a></td>
+                        <td> 
+                            <a href="edit.php?id=<?php echo($row['id_lib'])?>"><i class='fas fa-marker'></i></a>
+                            <a href="CRUD/delete.php?id=<?php echo($row['id_lib'])?>"><i class="fa-solid fa-trash"></i></a>
+                        </td>
                     </tr>
                 <?php    
                 }

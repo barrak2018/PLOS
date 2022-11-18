@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `bookshelf`
 --
+use database plos;
 
 CREATE TABLE `bookshelf` (
   `id_required` int(255) NOT NULL,
