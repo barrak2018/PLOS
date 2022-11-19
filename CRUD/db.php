@@ -26,9 +26,5 @@ function showTable($tabla, $connection)
         $query = "SELECT * FROM $tabla";
         return mysqli_query($connection,$query);
     }
-    function ShowWhere ($tabla, $connection, $colum, $param)
-    {
-        $query = "SELECT * FROM $tabla WHERE $culum = $param";
-        return mysqli_query($connection,$query);
-    }
+
 ?>

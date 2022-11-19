@@ -5,16 +5,22 @@
                 <h5 class="modal-title" >Editar</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="crud/edit.php" method="post">
+            <form action="crud/edit.php?<?php echo($row["id_lib"]) ?>" method="post">
                 <div class="modal-body">
-                    <label class="form-label" for="">Titulo</label>
-                    <input type="text" class="form-control">
-                    <label class="form-label" for="">Autor</label>
-                    <input type="text" class="form-control">
+                    
+                
+
+                    <label class="form-label" for="nombre">Titulo</label>
+                    <input type="text" class="form-control" id="nombre" name="Nombre" value="<?php echo($row["title"]) ?>">
+
+                    <label class="form-label" for="autor">Autor</label>
+                    <input type="text" class="form-control" id="autor" name="Autor">
+
                     <label class="form-label" for="">Año</label>
-                    <input type="number" class="form-control">
-                    <label class="form-label" for="">descripción</label>
-                    <textarea class='form-control' name="" id="" cols="30" rows="6"></textarea>
+                    <input type="number" class="form-control" id="num" name="Year">
+
+                    <label class="form-label" for="description">descripción</label>
+                    <textarea class='form-control' name="Desc" id="description" cols="30" rows="6"></textarea>
                     
                 </div>
                 <div class="modal-footer">
