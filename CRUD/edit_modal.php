@@ -12,7 +12,7 @@
                     <label class="form-label" for="">Autor</label>
                     <input type="text" class="form-control">
                     <label class="form-label" for="">Año</label>
-                    <input type="text" class="form-control">
+                    <input type="number" class="form-control">
                     <label class="form-label" for="">descripción</label>
                     <textarea class='form-control' name="" id="" cols="30" rows="6"></textarea>
                     
