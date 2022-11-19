@@ -33,9 +33,11 @@
             </thead>
             <tbody class="table-group-divider">
                 <?php
-                $query = "SELECT * FROM library";
+                // $query = "SELECT * FROM library";
+                // $result = mysqli_query($conn,$query);
 
-                $result = mysqli_query($conn,$query);
+
+                $result = showTable('library',$conn);
 
                 while ($row = mysqli_fetch_array($result)) {?>
                     <tr>
@@ -44,8 +46,8 @@
                         <td><?php echo($row["author"]) ?></td>
                         <td><?php echo($row["_year"]) ?></td>
                         <td> 
-                            <a href="edit.php?id=<?php echo($row['id_lib'])?>"><i class='fas fa-marker'></i></a>
-                            <a href="CRUD/delete.php?id=<?php echo($row['id_lib'])?>"><i class="fa-solid fa-trash"></i></a>
+                            <button class="btn btn-secondary " data-bs-toggle="modal" data-bs-target="#myModal"><i class='fas fa-marker'></i></button>
+                            <a href="CRUD/delete.php?id=<?php echo($row['id_lib'])?>" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
                 <?php    
@@ -57,6 +59,7 @@
         </div>
     </div>
 </div>
+<?php include("CRUD/edit_modal.php") ?>
 
 
 
