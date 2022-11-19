@@ -23,7 +23,12 @@ $conn = mysqli_connect(
 // showTable devuelve el contenido de una tabla 
 function showTable($tabla, $connection)
     {
-        $query = "SELECT * FROM library";
+        $query = "SELECT * FROM $tabla";
+        return mysqli_query($connection,$query);
+    }
+    function ShowWhere ($tabla, $connection, $colum, $param)
+    {
+        $query = "SELECT * FROM $tabla WHERE $culum = $param";
         return mysqli_query($connection,$query);
     }
 ?>

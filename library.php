@@ -47,6 +47,7 @@
                         <td><?php echo($row["_year"]) ?></td>
                         <td> 
                             <button class="btn btn-secondary " data-bs-toggle="modal" data-bs-target="#myModal"><i class='fas fa-marker'></i></button>
+                            <?php include("CRUD/edit_modal.php") ?>
                             <a href="CRUD/delete.php?id=<?php echo($row['id_lib'])?>" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
@@ -59,7 +60,6 @@
         </div>
     </div>
 </div>
-<?php include("CRUD/edit_modal.php") ?>
 
 
 
