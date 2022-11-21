@@ -1,4 +1,4 @@
-<?php include("includes/header.php"); include("CRUD/db.php"); ?>
+<?php include("header.php"); include("CRUD/db.php"); ?>
 
 <div class="container">
     <div class="row border">
@@ -68,4 +68,4 @@
 
 
 
-<?php include("includes/footer.php"); ?>
+<?php include("footer.php"); ?>
